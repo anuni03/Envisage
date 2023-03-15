@@ -13,7 +13,7 @@ export default function SignUp() {
       e.preventDefault();
       alert("Invalid Admin");
     } else {
-      e.preventDefault();
+      e.preventDefault(); 
 
       console.log(fname, lname, email, password);
       fetch("http://localhost:5000/register", {
@@ -35,11 +35,11 @@ export default function SignUp() {
         .then((res) => res.json())
         .then((data) => {
           console.log(data, "userRegister");
-          if (data.status === "ok") {
-            alert("Registration Successful");
-          } else {
-            alert("Something went wrong");
-          }
+          // if (data.status === "ok") {
+          //   alert("Registration Successful");
+          // } else {
+          //   alert("Something went wrong");
+          // }
         });
     }
   };
