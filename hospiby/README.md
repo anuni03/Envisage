@@ -12,7 +12,7 @@ License
 Clone the repository:
 bash
 Copy code
-git clone https://github.com/your-username/hospital-finder-app.git
+git clone https://github.com/Tejas20-03/Envisage/hospiby.git
 Install dependencies in the server directory:
 bash
 Copy code
