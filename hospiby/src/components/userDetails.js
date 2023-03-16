@@ -23,14 +23,14 @@ export default function UserDetails() {
       .then((res) => res.json())
       .then((data) => {
         console.log(data, "userData");
-        this.setstate({userData:data.data});
-        if (data.data.userType == "Admin") {
+        // this.setstate({userData:data.data});
+        if (data.data.userType === "Admin") {
           setAdmin(true);
         }
 
         setUserData(data.data);
 
-        if (data.data == "token expired") {
+        if (data.data === "token expired") {
           alert("Token expired login again");
           window.localStorage.clear();
           window.location.href = "./sign-in";

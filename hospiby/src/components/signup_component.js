@@ -35,11 +35,11 @@ export default function SignUp() {
         .then((res) => res.json())
         .then((data) => {
           console.log(data, "userRegister");
-          // if (data.status === "ok") {
-          //   alert("Registration Successful");
-          // } else {
-          //   alert("Something went wrong");
-          // }
+          if (data.status === "Ok") {
+            alert("Registration Successful");
+          } else {
+            alert("Something went wrong");
+          }
         });
     }
   };
