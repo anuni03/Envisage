@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
+import Navbar from "./components/Navbar/Navbar"
 import Login from "./components/login_component";
 import SignUp from "./components/signup_component";
 import UserDetails from "./components/userDetails";
@@ -10,6 +10,7 @@ function App() {
   const isLoggedIn = window.localStorage.getItem("loggedIn");
   return (
     <Router>
+      <Navbar />
       <div className="App">
         <Routes>
           <Route
