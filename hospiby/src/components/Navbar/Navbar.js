@@ -35,6 +35,9 @@ const Navbar = () => {
             <li>
               <NavLink to="/contact">Contact Us</NavLink>
             </li>
+            <li>
+              <NavLink to ="/">Login/Signup</NavLink>
+            </li>
           </ul>
         </div>
 
@@ -48,6 +51,9 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
+      {/* <div>
+        <h1 className="hero-section">Hospiby</h1>
+      </div> */}
     </>
   );
 };

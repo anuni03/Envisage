@@ -11,20 +11,18 @@ function App() {
   return (
     <Router>
       <Navbar />
-      <div className="App">
-        <Routes>
-          <Route
-            exact
-            path="/"
-            element={isLoggedIn === "true" ? <UserDetails /> : <Login />}
-          />
-          <Route path="/sign-in" element={<Login />} />
-          <Route path="/sign-up" element={<SignUp />} />
-          <Route path="/userDetails" element={<UserDetails />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route
+          exact
+          path="/"
+          element={isLoggedIn === true ? <UserDetails /> : <Login />}
+        />
+        <Route path="/sign-in" element={<Login />} />
+        <Route path="/sign-up" element={<SignUp />} />
+        <Route path="/userDetails" element={<UserDetails />} />
+      </Routes>
     </Router>
-    
+
   );
 }
 
