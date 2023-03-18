@@ -7,6 +7,7 @@ export default function SignUp() {
   const [password, setPassword] = useState("");
   const [userType, setUserType] = useState("");
   const [secretKey, setSecretKey] = useState("");
+  const [city,setCity] = useState("");
 
   const handleSubmit = (e) => {
     if (userType === "Admin" && secretKey !== "hospiby") {
@@ -30,6 +31,7 @@ export default function SignUp() {
           lname,
           password,
           userType,
+          city,
         }),
       })
         .then((res) => res.json())
@@ -95,6 +97,15 @@ export default function SignUp() {
               className="form-control"
               placeholder="Last name"
               onChange={(e) => setLname(e.target.value)}
+            />
+          </div>
+          <div className="mb-3">
+            <label>City</label>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="City"
+              onChange={(e) => setCity(e.target.value)}
             />
           </div>
 
