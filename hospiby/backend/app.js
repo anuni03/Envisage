@@ -30,7 +30,9 @@ require("./userDetails");
 const User = mongoose.model("userInfo");
 
 app.post("/register", async (req, res) => {
-    const { fname, lname, email, password, userType, city } = req.body;
+    const { fname, lname, email, password, userType} = req.body;
+
+    const city = req.body.city.toLowerCase();
 
     const encryptedPassword = await bcrypt.hash(password, 10);
 
@@ -96,4 +98,14 @@ app.post("/userData",async(req,res)=>{
             res.send({status:"error",data:error})
         })
     } catch (error) {}
+})
+
+app.get("/fetchdata", async (req, res) => {
+    const city = (req.body.city).toLowerCase();
+    const type = "Admin";
+    User.find({ userType: type, city: city }).select("-password").then((data) => {
+        res.send({ status: "ok", data: data, city:city });
+    }).catch((error) => {
+        res.send({ status: "error", data: error })
+    })
 })
